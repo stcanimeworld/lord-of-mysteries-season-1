@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> STC ANIME WORLD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+        }
+        .header-bg {
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .video-player-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .video-player-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .server-btn, .episode-btn, .download-btn {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .server-btn:hover, .episode-btn:hover, .download-btn:hover {
+            transform: translateY(-2px);
+        }
+        .server-btn.active, .episode-btn.active {
+             background-color: #4f46e5;
+             color: white;
+             font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <header class="header-bg sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="https://www.stcanimeworld.free.nf/" class="text-2xl sm:text-3xl font-bold text-white">
+                    STC <span class="text-indigo-400">ANIME WORLD</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    </nav>
+                <div>
+                    <a href="https://t.me/stcanimeworld" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 rounded-full text-sm inline-flex items-center">
+                        <i class="fab fa-telegram-plane text-base"></i>
+                        <span class="hidden sm:inline ml-2">Join Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:flex lg:space-x-8">
+
+            <div class="lg:w-2/3">
+                <div class="text-left mb-2">
+                    <span class="text-white font-semibold text-sm">lord of mysteries season 1</span>
+                </div>
+
+                <section class="mb-6">
+                    <div class="video-player-container rounded-lg shadow-lg">
+                        <iframe 
+                            id="video-player"
+                            src="" 
+                            title="Video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="bg-gray-800 rounded-lg p-4 md:p-6 mb-6">
+                    <p id="episode-indicator" class="text-indigo-400 font-semibold"></p>
+                    
+                    <div class="flex flex-wrap items-center gap-3 mt-4">
+                        <div id="server-buttons" class="flex flex-wrap gap-2"></div>
+
+                        <a id="download-button" href="#" class="download-btn bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md text-sm inline-flex items-center font-semibold">
+                            <i class="fas fa-download mr-2"></i>
+                            <span>Download</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="lg:w-1/3 lg:mt-8">
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <h2 class="text-xl font-bold text-white mb-4 border-b-2 border-gray-700 pb-2">Episodes</h2>
+                    <div class="max-h-96 overflow-y-auto pr-2">
+                        <div id="episode-list" class="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-4 gap-2">
+                            </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 mt-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2025 STC ANIME WORLD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- সকল এপিসোডের তথ্য এখানে যোগ করুন ---
+            // আপনাকে শুধু এই 'episodesData' অ্যারে-টি এডিট করতে হবে।
+            const episodesData = [
+                // নতুন এপিসোড যোগ করতে, নিচের ফরম্যাটটি কপি করে পেস্ট করুন এবং তথ্য পরিবর্তন করুন
+                {
+                    episode: 1, // এপিসোড নম্বর
+                    servers: {
+                        'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbp94/', // সার্ভারের নাম এবং লিঙ্ক
+                        'Server 2 (Ruby)': ' https://rubyvidhub.com/embed-cg79weptsaw7.html'
+                    },
+                    downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/vn20250719-222326-1920x1080-023516.html?m=1' // এপিসোড ১ এর ডাউনলোড লিঙ্ক
+                },
+                {
+                    episode: 2, // এপিসোড নম্বর
+                    servers: {
+                        'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpbu/',
+                        'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-00hzq9t3zasa.html' // সার্ভারের নাম এবং লিঙ্ক
+                    },
+                    downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1.html' // এপিসোড ২ এর ডাউনলোড লিঙ্ক
+                },
+                {
+                    episode: 3, // এপিসোড নম্বর
+                    servers: {
+                        'Server 1 (Rumble)': ' https://rumble.com/embed/v6vbpsw/',
+                        'Server 2 (Ruby)': ' https://rubyvidhub.com/embed-9djx8jj7spi8.html'
+                    },
+                    downloadLink: ' https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_13.html' // এপিসোড ৩ এর ডাউনলোড লিঙ্ক
+                },
+                {
+                    episode: 4, // এপিসোড নম্বর
+                    servers: {
+                        'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpwy/ ',
+                        'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-q9e1vx08s56x.html' // সার্ভারের নাম এবং লিঙ্ক
+                    },
+                    downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_88.html' // এপিসোড 3 এর ডাউনলোড লিঙ্ক
+                },
+                 {
+                    episode: 5, // এপিসোড নম্বর
+                    servers: {
+                        'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpxe/',
+                        'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-yrbaq9s5imjr.html' // সার্ভারের নাম এবং লিঙ্ক
+                    },
+                    downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_52.html' // এপিসোড 3 এর ডাউনলোড লিঙ্ক
+                },
+                // ... এখানে নতুন এপিসোড যোগ করুন ...
+            ];
+
+            // --- নিচের কোডে কোনো পরিবর্তনের প্রয়োজন নেই ---
+
+            const videoPlayer = document.getElementById('video-player');
+            const episodeIndicator = document.getElementById('episode-indicator');
+            const serverButtonsContainer = document.getElementById('server-buttons');
+            const episodeListContainer = document.getElementById('episode-list');
+            const downloadButton = document.getElementById('download-button');
+
+            function loadEpisode(episodeNumber) {
+                const episodeData = episodesData.find(ep => ep.episode === episodeNumber);
+                if (!episodeData) return;
+
+                episodeIndicator.textContent = `You are watching Episode ${episodeData.episode}`;
+                
+                serverButtonsContainer.innerHTML = '';
+                let isFirstServer = true;
+                for (const serverName in episodeData.servers) {
+                    const serverUrl = episodeData.servers[serverName];
+                    const button = document.createElement('button');
+                    button.className = 'server-btn bg-gray-700 text-gray-300 py-2 px-4 rounded-md text-sm font-semibold';
+                    button.textContent = serverName;
+                    button.dataset.src = serverUrl;
+
+                    if (isFirstServer) {
+                        button.classList.add('active');
+                        videoPlayer.src = serverUrl;
+                        isFirstServer = false;
+                    }
+                    
+                    button.addEventListener('click', () => {
+                        videoPlayer.src = button.dataset.src;
+                        document.querySelectorAll('.server-btn').forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                    });
+                    
+                    serverButtonsContainer.appendChild(button);
+                }
+
+                downloadButton.href = episodeData.downloadLink;
+
+                document.querySelectorAll('.episode-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (parseInt(btn.dataset.episode) === episodeNumber) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            episodesData.forEach(epData => {
+                const button = document.createElement('button');
+                button.className = 'episode-btn bg-gray-700 text-gray-300 font-semibold py-2 rounded-md text-center';
+                button.textContent = epData.episode;
+                button.dataset.episode = epData.episode;
+                
+                button.addEventListener('click', () => {
+                    loadEpisode(epData.episode);
+                });
+
+                episodeListContainer.appendChild(button);
+            });
+
+            if (episodesData.length > 0) {
+                loadEpisode(episodesData[0].episode);
+            }
+        });
+    </script>
+
+    <div style="display: flex; gap: 20px;">
+
+    <div>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '34f1c9a50afd9914cd2611dd184ac8a5',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//tabloidincapable.com/34f1c9a50afd9914cd2611dd184ac8a5/invoke.js" defer></script>
+    </div>
+
+    <div>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '34f1c9a50afd9914cd2611dd184ac8a5',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//tabloidincapable.com/34f1c9a50afd9914cd2611dd184ac8a5/invoke.js" defer></script>
+    </div>
+
+</div>
+    
+    <script type="text/javascript" src="//tabloidincapable.com/044478bac56eb613662b93ef204db084/invoke.js" defer></script>
+    <script type='text/javascript' src='//tabloidincapable.com/6f/1d/cb/6f1dcb63312bd00b580c08ef33027a62.js' defer></script>
+    
+
+</body>
+</html>

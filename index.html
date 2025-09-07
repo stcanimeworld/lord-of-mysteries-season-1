@@ -119,7 +119,7 @@
                         <p id="episode-indicator" class="text-indigo-400 font-semibold"></p>
                         <div class="flex flex-wrap items-center gap-3 mt-4">
                             <div id="server-buttons" class="flex flex-wrap gap-2"></div>
-                            <a id="download-button" href="#" target="_blank" class="download-btn bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md text-sm inline-flex items-center font-semibold">
+                            <a id="download-button" href="#" class="download-btn bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md text-sm inline-flex items-center font-semibold">
                                 <i class="fas fa-download mr-2"></i>
                                 <span>Download</span>
                             </a>
@@ -142,6 +142,9 @@
                 <p class="text-gray-500 text-sm">&copy; 2025 STC ANIME WORLD. All Rights Reserved.</p>
             </div>
         </footer>
+
+        <!-- Ad Scripts -->
+        
     </div>
 
     <script>
@@ -244,15 +247,33 @@
 
         function initializeAnimePlayer() {
             const episodesData = [
-                { episode: 1, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbp94/', 'Server 2 (Ruby)': ' https://rubyvidhub.com/embed-cg79weptsaw7.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/vn20250719-222326-1920x1080-023516.html?m=1' },
-                { episode: 2, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpbu/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-00hzq9t3zasa.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1.html' },
-                { episode: 3, servers: { 'Server 1 (Rumble)': ' https://rumble.com/embed/v6vbpsw/', 'Server 2 (Ruby)': ' https://rubyvidhub.com/embed-9djx8jj7spi8.html' }, downloadLink: ' https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_13.html' },
-                { episode: 4, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpwy/ ', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-q9e1vx08s56x.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_88.html' },
-                { episode: 5, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpxe/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-yrbaq9s5imjr.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_52.html' },
-                { episode: 6, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vi5so/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-sstijt2bp2m0.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_17.html' },
-                { episode: 7, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vrty4/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-3fzo587pspdo.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_22.html' },
-                { episode: 8, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6w35hs/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-0hq7tcampw0a.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_30.html' },
-                { episode: 9, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6wfqlc/?pub=2ohvc2', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-4y7rww7a720q.html' }, downloadLink: 'https://stcanimedownloader.blogspot.com/2025/09/download-lord-of-mysteries-season-1.html' },
+                { episode: 1, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbp94/', 'Server 2 (Ruby)': ' https://rubyvidhub.com/embed-cg79weptsaw7.html' }, 
+				 <a harf = downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/vn20250719-222326-1920x1080-023516.html?m=1'</a.
+				
+                { episode: 2, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpbu/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-00hzq9t3zasa.html' }, 
+				 downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1.html' },
+				
+                { episode: 3, servers: { 'Server 1 (Rumble)': ' https://rumble.com/embed/v6vbpsw/', 'Server 2 (Ruby)': ' https://rubyvidhub.com/embed-9djx8jj7spi8.html' }, 
+				 downloadLink: ' https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_13.html' },
+				
+                { episode: 4, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpwy/ ', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-q9e1vx08s56x.html' }, 
+				 downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_88.html' },
+				
+                { episode: 5, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vbpxe/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-yrbaq9s5imjr.html' }, 
+				 downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_52.html' },
+				
+                { episode: 6, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vi5so/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-sstijt2bp2m0.html' }, 
+				 downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_17.html' },
+				
+                { episode: 7, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6vrty4/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-3fzo587pspdo.html' }, 
+				 downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_22.html' },
+				
+                { episode: 8, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6w35hs/', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-0hq7tcampw0a.html' }, 
+				 downloadLink: 'https://stcanimedownloader.blogspot.com/2025/08/download-lord-of-mysteries-season-1_30.html' },
+
+				 { episode: 9, servers: { 'Server 1 (Rumble)': 'https://rumble.com/embed/v6wfqlc/?pub=2ohvc2', 'Server 2 (Ruby)': 'https://rubyvidhub.com/embed-4y7rww7a720q.html' }, 
+				 downloadLink: 'https://stcanimedownloader.blogspot.com/2025/09/download-lord-of-mysteries-season-1.html' },
+				
             ];
 
             const videoPlayer = document.getElementById('video-player');
@@ -321,4 +342,8 @@
     </script>
 </body>
 </html>
+
+
+
+
 
